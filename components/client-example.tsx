@@ -33,7 +33,10 @@ const UpdateForm = () => {
 }
 
 export default function ClientExample() {
-  const { data: session, status } = useSession()
+  const useSessionReturnValue = useSession()
+  console.log('ClientExample client component\n', { useSessionReturnValue })
+  const { data: session, status } = useSessionReturnValue
+
   const [apiResponse, setApiResponse] = useState("")
 
   const makeRequestWithToken = async () => {
